@@ -55,10 +55,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -69,29 +65,52 @@ class _MyHomePageState extends State<MyHomePage> {
             image: AssetImage("assets/images/Home.png"),
           )
         ),
-      child: const Scaffold(
-        backgroundColor: Colors.transparent,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(35.0),
-              child: Text(
-                'WELCOME',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Poppins',
-                  fontSize: 50
+      child: Container(
+        margin: const EdgeInsets.only(
+          left: 32.0,
+          right: 32.0
+          ),
+        child: const Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(48.0),
+                child: Text(
+                  'WELCOME',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Poppins',
+                    fontSize: 50
+                  ),
                 ),
+              ),
+              
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.white),
+                  foregroundColor: MaterialStatePropertyAll<Color>(Colors.black),
+                  shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(borderRadius: BorderRadius.zero)
+                  ),
+                  padding: MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(12.0)),
+                ),
+                onPressed: null, 
+                child: Text(
+                  'LOGIN',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 20
+                    
+                  ),
+                )
               )
-            ),
-            
-          ]
+            ]
+          ),
         ),
       ),
-      
-
     );
   }
 }
