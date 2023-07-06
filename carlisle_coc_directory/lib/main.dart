@@ -1,6 +1,8 @@
 //WELCOME PAGE
 
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'login.dart';
 
 void main() {
   runApp(const Directory());
@@ -46,10 +48,10 @@ class _WelcomePageState extends State<WelcomePage> {
             left: 32.0,
             right: 32.0,
           ),
-          child: const Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(
                   top: 48.0,
                   left: 48.0,
@@ -67,7 +69,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
               ElevatedButton(
-                style: ButtonStyle(
+                style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll<Color>(Colors.white),
                   foregroundColor: MaterialStatePropertyAll<Color>(Colors.black),
                   shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
@@ -75,9 +77,17 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                   padding: MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(12.0)),
                 ),
-                //TODO: IMPLEMENT PAGE SWITCH ON PRESSED
-                onPressed: null, 
-                child: Text(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    PageTransition(
+                      type: PageTransitionType.bottomToTop,
+                      child: const LoginPage(),
+                      // childCurrent: widget
+                    ),
+                  );
+                }, 
+                child: const Text(
                   'LOGIN',
                   style: TextStyle(
                     fontFamily: 'Poppins',
