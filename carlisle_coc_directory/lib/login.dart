@@ -23,8 +23,8 @@ class _LoginPageState extends State<LoginPage> {
             image: AssetImage("assets/images/Login.png"),
           )
         ),
-      child: Align(
-        alignment: Alignment.bottomCenter,
+        child: Align(
+          alignment: Alignment.bottomCenter,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
@@ -70,7 +70,40 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.white.withOpacity(0.2)
                     ),
                   ),
-                ) 
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: 27.0,
+                    right: 27.0,
+                    top: 24.0,
+                  ),
+                  child: Text(
+                    'Email or Username',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Poppins',
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 27.0,
+                    right: 27.0,
+                    top: 4.0
+                  ),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: 'foreverfaithful@gmail.com',
+                      hintStyle: TextStyle(
+                        color: Colors.white.withOpacity(0.5),
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             // child: BackdropFilter(
@@ -80,6 +113,7 @@ class _LoginPageState extends State<LoginPage> {
             //   ),
             // ),
           ),
+        
         ),
       ),
     );
